@@ -1,0 +1,61 @@
+---
+import PostCard from './PostCard.astro';
+
+const posts = [
+  {
+    date: '2026.05.12',
+    category: 'NOTE',
+    title: 'Hello, World — 站点上线',
+    excerpt:
+      '第 N 次试着写博客。这次想把它当成一个开着扫描线的小宇宙，把笔记、玩具、半成品都堆进来。先有个家，再慢慢长。',
+    accent: 'cyan' as const,
+    readTime: '3 min',
+  },
+  {
+    date: '2026.05.04',
+    category: 'DESIGN',
+    title: 'Y2K 设计笔记：把霓虹关进像素方块',
+    excerpt:
+      '复古不等于复印。聊聊我是怎么从 vaporwave、Frutiger Aero、DOS 终端里拼一套自己的视觉语言的。',
+    accent: 'magenta' as const,
+    readTime: '7 min',
+  },
+  {
+    date: '2026.04.21',
+    category: 'CODE',
+    title: '一个不用库的 Canvas 粒子动效',
+    excerpt:
+      '没有 three.js 没有 tsParticles，只有 ~400 行 vanilla JS + requestAnimationFrame。讲讲拖尾、模式切换、不卡顿的几个小窍门。',
+    accent: 'yellow' as const,
+    readTime: '11 min',
+  },
+];
+---
+
+<section class="py-8 md:py-12">
+  <div class="reveal reveal-1 section-index mb-6">
+    <span>002</span>
+    <span class="text-neon-cyan">·</span>
+    <span>TRANSMISSIONS</span>
+  </div>
+
+  <div class="mb-8 flex items-end justify-between gap-4">
+    <h2 class="font-pixel text-[1.2rem] text-neon-cyan md:text-[1.5rem]">
+      &gt; recent_posts
+    </h2>
+    <a
+      href="/posts"
+      class="font-accent text-[0.65rem] uppercase tracking-widest text-type-dim hover:text-neon-magenta"
+    >
+      all archive &gt;
+    </a>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {posts.map((post, i) => (
+      <div class={`reveal reveal-${i + 2}`}>
+        <PostCard {...post} />
+      </div>
+    ))}
+  </div>
+</section>

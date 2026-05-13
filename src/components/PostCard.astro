@@ -1,0 +1,59 @@
+---
+interface Props {
+  date: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  accent?: 'cyan' | 'magenta' | 'yellow';
+  readTime?: string;
+}
+const { date, category, title, excerpt, accent = 'cyan', readTime } = Astro.props;
+
+const accentMap = {
+  cyan: {
+    border: 'border-neon-cyan',
+    shadow: 'shadow-dither-cyan',
+    chip: 'bg-neon-cyan text-ink-deep',
+    title: 'text-neon-cyan',
+    barFrom: 'from-neon-cyan',
+  },
+  magenta: {
+    border: 'border-neon-magenta',
+    shadow: 'shadow-dither',
+    chip: 'bg-neon-magenta text-ink-deep',
+    title: 'text-neon-magenta',
+    barFrom: 'from-neon-magenta',
+  },
+  yellow: {
+    border: 'border-neon-yellow',
+    shadow: 'shadow-dither-yellow',
+    chip: 'bg-neon-yellow text-ink-deep',
+    title: 'text-neon-yellow',
+    barFrom: 'from-neon-yellow',
+  },
+};
+const a = accentMap[accent];
+---
+
+<article
+  class={`group relative flex h-full flex-col gap-4 border-2 ${a.border} ${a.shadow} bg-ink-deep/85 p-5 transition-transform duration-100 hover:-translate-x-[3px] hover:-translate-y-[3px]`}
+>
+  <!-- accent stripe -->
+  <div class={`absolute -top-[1px] left-0 h-1 w-1/3 bg-gradient-to-r ${a.barFrom} to-transparent`}></div>
+
+  <div class="flex items-center justify-between font-accent text-[0.6rem] uppercase tracking-widest">
+    <span class={`px-2 py-0.5 ${a.chip}`}>{category}</span>
+    <time class="text-type-dim">{date}</time>
+  </div>
+
+  <h3 class={`font-pixel text-[0.92rem] leading-[1.35] ${a.title}`}>
+    {title}
+  </h3>
+
+  <p class="grow font-terminal text-lg text-type-base/85">{excerpt}</p>
+
+  <div class="mt-auto flex items-center justify-between border-t border-type-dim/30 pt-3 font-accent text-[0.6rem] uppercase text-type-dim">
+    <span>{readTime ?? '—'} read</span>
+    <span class={`${a.title} transition-transform group-hover:translate-x-1`}>▶▶</span>
+  </div>
+</article>

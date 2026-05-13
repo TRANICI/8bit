@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ParticleCanvas from '../components/ParticleCanvas.astro';
+import WanderHero from '../components/WanderHero';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout shell="full" title="TRANICI / Wanderful">
+  <main>
+    <ParticleCanvas />
+    <WanderHero client:load />
+  </main>
+  <Footer />
+</BaseLayout>

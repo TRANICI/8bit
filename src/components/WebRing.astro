@@ -1,0 +1,35 @@
+---
+const rings = [
+  { name: 'pixel.cafe' },
+  { name: 'crt-dreams' },
+  { name: 'dial-up.log' },
+  { name: 'glitch.house' },
+  { name: 'terminal.ok' },
+  { name: '88x31.club' },
+  { name: 'vaporlab' },
+  { name: 'nightshift' },
+];
+const track = [...rings, ...rings];
+---
+
+<section class="border-y border-neon-magenta/30 py-4">
+  <div class="mb-2 flex items-center gap-2 font-accent text-[0.6rem] uppercase tracking-widest text-type-dim">
+    <span class="h-1 w-1 animate-pulse bg-neon-yellow"></span>
+    <span>web-ring</span>
+  </div>
+
+  <div class="overflow-hidden">
+    <div class="marquee-track flex w-max items-center gap-6">
+      {
+        track.map((r) => (
+          <a
+            href="#"
+            class="shrink-0 font-pixel text-[0.65rem] uppercase tracking-[0.16em] text-type-dim transition hover:text-neon-magenta"
+          >
+            ◆ {r.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

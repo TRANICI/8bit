@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="TRANICI / Media">
+  <main class="py-8 md:py-12">
+    <div class="reveal reveal-1 section-index mb-6">
+      <span>004</span>
+      <span class="text-neon-cyan">·</span>
+      <span>MEDIA</span>
+    </div>
+
+    <section class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="reveal reveal-2 pixel-border-cyan bg-ink-deep/90 p-6">
+        <h1 class="font-pixel text-[1.15rem] text-neon-cyan md:text-[1.45rem]">
+          &gt; media_buffer
+        </h1>
+        <p class="mt-5 max-w-2xl font-terminal text-xl text-type-base/90">
+          这里先作为影像、截图、声音和旅行式灵感素材的入口。后续可以接相册、短视频日志或外部媒体流。
+        </p>
+      </div>
+
+      <div class="reveal reveal-3 liquid-glass rounded-[8px] p-5">
+        <div class="grid aspect-video place-items-center border border-neon-magenta/40 bg-black/55">
+          <p class="font-accent text-[0.65rem] uppercase tracking-widest text-type-dim">
+            media slot / pending
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

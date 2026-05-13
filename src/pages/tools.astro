@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="TRANICI / Tools">
+  <main class="py-8 md:py-12">
+    <div class="reveal reveal-1 section-index mb-6">
+      <span>005</span>
+      <span class="text-neon-cyan">·</span>
+      <span>TOOLS</span>
+    </div>
+
+    <section class="grid gap-6 md:grid-cols-2">
+      <article class="reveal reveal-2 pixel-border-cyan bg-ink-deep/90 p-6">
+        <h1 class="font-pixel text-[1.1rem] text-neon-yellow md:text-[1.35rem]">
+          &gt; tool_bay
+        </h1>
+        <p class="mt-5 font-terminal text-xl text-type-base/90">
+          这里先占位 Wanderful 行程规划、站点实验工具和小型交互玩具。按钮已经从首页 hero 接入此页。
+        </p>
+      </article>
+
+      <article class="reveal reveal-3 liquid-glass rounded-[8px] p-5">
+        <div class="win-chrome">
+          <span class="win-chrome__dots">
+            <span></span><span></span><span></span>
+          </span>
+          <span>tools@tranici:~$ ls</span>
+        </div>
+        <ul class="space-y-3 px-2 py-5 font-terminal text-lg text-type-dim">
+          <li><span class="text-neon-cyan">01</span> itinerary.builder -- pending</li>
+          <li><span class="text-neon-magenta">02</span> particle.lab -- pending</li>
+          <li><span class="text-neon-yellow">03</span> link.archive -- pending</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

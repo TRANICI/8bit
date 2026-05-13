@@ -1,0 +1,66 @@
+---
+import ParticleCanvas from './ParticleCanvas.astro';
+---
+
+<section id="home" class="relative py-14 md:py-20">
+  <!-- section index -->
+  <div class="reveal reveal-1 section-index mb-6">
+    <span>001</span>
+    <span class="text-neon-cyan">·</span>
+    <span>HOMEBASE</span>
+  </div>
+
+  <!-- bento grid : title block + canvas card + stat ticker -->
+  <div class="grid gap-8 lg:grid-cols-12 lg:items-stretch">
+    <!-- ===== title block (spans wider on lg) ===== -->
+    <div class="lg:col-span-7 lg:flex lg:flex-col lg:justify-between">
+      <div>
+        <h1
+          class="reveal reveal-2 font-pixel text-[1.55rem] leading-[1.2] sm:text-[2rem] md:text-[2.4rem] lg:text-[2.8rem]"
+        >
+          <span class="text-neon-cyan">&gt;</span> a quiet
+          <br class="hidden md:block" />
+          <span class="text-neon-magenta">corner</span> of the
+          <span class="text-neon-yellow">web.</span>
+        </h1>
+
+        <p class="reveal reveal-3 mt-6 max-w-xl font-terminal text-xl text-type-base/90">
+          欢迎进入 <span class="text-neon-cyan">TRANICI</span> 终端 ——
+          一台想象里的 CRT，把笔记、玩具、半成品都塞了进去。
+          偶尔写点东西，常常拆点东西，永远在装修中。
+        </p>
+
+        <div class="reveal reveal-4 mt-8 flex flex-wrap items-center gap-3">
+          <a href="#posts" class="pixel-btn">▶ READ POSTS</a>
+          <a href="#about" class="pixel-btn pixel-btn--alt">✉ MAIL ME</a>
+          <a href="#projects" class="font-pixel text-[0.7rem] uppercase tracking-[0.16em] text-type-dim hover:text-neon-cyan">
+            &gt; view projects
+          </a>
+        </div>
+      </div>
+
+      <!-- inline stat ticker -->
+      <dl
+        class="reveal reveal-5 mt-12 grid grid-cols-3 divide-x divide-neon-cyan/30 border-t border-neon-cyan/30 pt-5 font-accent text-[0.55rem] uppercase tracking-widest"
+      >
+        <div class="px-1 first:pl-0">
+          <dt class="text-type-dim">posts</dt>
+          <dd class="mt-1 font-pixel text-[0.95rem] text-neon-cyan tabular-nums">003</dd>
+        </div>
+        <div class="px-4">
+          <dt class="text-type-dim">projects</dt>
+          <dd class="mt-1 font-pixel text-[0.95rem] text-neon-magenta tabular-nums">007</dd>
+        </div>
+        <div class="px-4">
+          <dt class="text-type-dim">since</dt>
+          <dd class="mt-1 font-pixel text-[0.95rem] text-neon-yellow tabular-nums">'26</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- ===== canvas card ===== -->
+    <div class="reveal reveal-3 lg:col-span-5">
+      <ParticleCanvas />
+    </div>
+  </div>
+</section>

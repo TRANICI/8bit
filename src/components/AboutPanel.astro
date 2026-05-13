@@ -1,0 +1,95 @@
+---
+const skills = [
+  { label: 'frontend', value: 92, color: 'cyan' },
+  { label: 'design', value: 78, color: 'magenta' },
+  { label: 'pixel-art', value: 65, color: 'yellow' },
+];
+---
+
+<section class="py-8 md:py-12">
+  <div class="reveal reveal-1 section-index mb-6">
+    <span>003</span>
+    <span class="text-neon-cyan">·</span>
+    <span>SYSTEM</span>
+  </div>
+
+  <div class="grid gap-10 md:grid-cols-[1.3fr_1fr] md:items-start lg:gap-14">
+    <div class="reveal reveal-2">
+      <h1 class="font-pixel text-[1.2rem] text-neon-yellow md:text-[1.5rem]">
+        &gt; whoami
+      </h1>
+
+      <p class="mt-5 font-terminal text-xl text-type-base">
+        我在 <span class="text-neon-cyan">代码</span>、
+        <span class="text-neon-magenta">视觉</span>、
+        <span class="text-neon-yellow">怀旧</span>
+        三角带里反复横跳。白天写东西，晚上拆东西，凌晨大概在看 90~00 年代的科幻动画。
+      </p>
+      <p class="mt-4 max-w-lg font-terminal text-lg text-type-dim">
+        TRANICI 是我的个人终端，也是一次把 Wanderful 式 cinematic hero 和像素终端风格融合起来的实验。
+      </p>
+
+      <div class="mt-7 flex flex-wrap items-center gap-3">
+        <a href="mailto:hi@tranici.dev" class="pixel-btn">
+          ✉ hi@tranici.dev
+        </a>
+        <a
+          href="#"
+          class="font-pixel text-[0.7rem] uppercase tracking-[0.16em] text-type-dim hover:text-neon-magenta"
+        >
+          &gt; download.cv
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-3 pixel-border-cyan bg-ink-deep/90">
+      <div class="win-chrome">
+        <span class="win-chrome__dots">
+          <span></span><span></span><span></span>
+        </span>
+        <span>tranici@terminal:~$ neofetch</span>
+      </div>
+      <div class="px-5 py-4 font-terminal text-base text-type-dim">
+        <dl class="space-y-1.5 leading-relaxed">
+          <div class="flex justify-between gap-4">
+            <dt>host</dt><dd class="text-type-base">tranici-terminal</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>os</dt><dd class="text-type-base">y2k.os 2.0</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>uptime</dt><dd class="text-type-base">since 2026</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>shell</dt><dd class="text-type-base">/bin/curiosity</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>stack</dt><dd class="text-type-base">astro · react · canvas</dd>
+          </div>
+          <div class="flex justify-between gap-4">
+            <dt>mood</dt><dd class="text-neon-yellow">CONNECTED ▒▒▒</dd>
+          </div>
+        </dl>
+
+        <div class="mt-5 space-y-2 border-t border-type-dim/20 pt-4">
+          {
+            skills.map((row) => (
+              <div>
+                <div class="flex justify-between font-accent text-[0.55rem] uppercase tracking-widest">
+                  <span>/{row.label}</span>
+                  <span class="tabular-nums text-type-dim">{row.value}%</span>
+                </div>
+                <div class="mt-1 h-1.5 w-full bg-ink-base">
+                  <div
+                    class={`h-full ${row.color === 'cyan' ? 'bg-neon-cyan' : row.color === 'magenta' ? 'bg-neon-magenta' : 'bg-neon-yellow'}`}
+                    style={`width: ${row.value}%`}
+                  ></div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
